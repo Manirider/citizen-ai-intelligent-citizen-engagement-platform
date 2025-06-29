@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CitizenAI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('{{ url_for("static", filename="images/background.jpg") }}') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .content-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            max-width: 900px;
+            margin: 60px auto;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .back-link a {
+            color: #add8e6;
+            text-decoration: none;
+        }
+
+        p, li {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        h3 {
+            color: #fff;
+            margin-top: 30px;
+            font-size: 24px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- About Page Content -->
+    <div class="content-container">
+        <h2>About CitizenAI</h2>
+        <div class="back-link">
+            <a href="{{ url_for('home') }}">Back to Home</a>
+        </div>
+
+        <p><span class="highlight">CitizenAI:</span> CitizenAI is a platform designed to improve how governments and citizens interact, using artificial intelligence (AI) to make public services smarter, faster, and more accessible.</p>
+
+        <p>Our mission is to simplify civic interactions, encourage transparency, and foster trust by providing a smart, responsive, and accessible interface for every citizen. Whether you're submitting feedback, accessing government services, or exploring insights—CitizenAI is your bridge to a smarter society.</p>
+
+        <h3>🖋️ In Simple Terms:</h3>
+        <ul>
+            <li>Asking questions about public services</li>
+            <li>Reporting issues (like potholes, pollution, or delays)</li>
+        </ul>
+
+        <h3> Key Features:</h3>
+        <ul>
+            <li><strong>Chat Assistant:</strong> Lets citizens ask questions and get AI-powered responses.</li>
+            <li><strong>Sentiment Analysis:</strong> Understands whether feedback is positive, negative, or neutral.</li>
+            <li><strong>Concern Reporting:</strong> Citizens can submit issues, and the system tracks or logs them.</li>
+            <li><strong>IBM Granite Models:</strong> Powerful AI models from IBM that understand and generate human-like responses.</li>
+        </ul>
+
+        <h3>🏛️ Why It’s Useful for US:</h3>
+        <ul>
+            <li>Makes government services more transparent, efficient, and citizen-friendly.</li>
+            <li>Saves time by automating responses to common queries.</li>
+            <li>Improves civic engagement and trust between the government and people.</li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CitizenAI - Chat Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #d7e1ec, #c3d0db);
+        }
+
+        .chat-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background-color: #e8f0f8;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-container h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .chat-form label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .chat-form input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #27ae60;
+        }
+
+        .chat-response,
+        .chat-sentiment {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-response h3,
+        .chat-sentiment h4 {
+            margin-top: 0;
+            color: #34495e;
+        }
+
+        /* Sentiment Styles */
+        .sentiment-positive {
+            color: green;
+            font-weight: bold;
+        }
+
+        .sentiment-neutral {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .sentiment-negative {
+            color: red;
+            font-weight: bold;
+        }
+
+        a.btn {
+            margin-top: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-container">
+        <h2>Citizen Chat Assistant</h2>
+
+        <form action="{{ url_for('chat') }}" method="POST" class="chat-form">
+            <label for="user_input">Ask the Assistant:</label>
+            <input type="text" id="user_input" name="user_input" placeholder="Type your question here..." required>
+            <br><br>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+
+        {% if response %}
+        <div class="chat-response">
+            <h3>AI Response:</h3>
+            <p>{{ response }}</p>
+        </div>
+
+        <div class="chat-sentiment">
+            <h4>Sentiment Analysis:</h4>
+            {% if 'POSITIVE' in sentiment %}
+            <p class="sentiment-positive">{{ sentiment }}</p>
+            {% elif 'NEUTRAL' in sentiment %}
+            <p class="sentiment-neutral">{{ sentiment }}</p>
+            {% elif 'NEGATIVE' in sentiment %}
+            <p class="sentiment-negative">{{ sentiment }}</p>
+            {% else %}
+            <p>{{ sentiment }}</p>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+    </div>
+</body>
+
+</html>

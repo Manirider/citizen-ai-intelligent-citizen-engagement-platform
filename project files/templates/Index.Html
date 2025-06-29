@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CitizenAI - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #2f2f3d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 10px 0 0 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .main-section {
+            display: flex;
+            flex-direction: row;
+            height: calc(100vh - 140px);
+        }
+
+        .intro-section {
+            width: 50%;
+            background-color: #2b1e3e;
+            color: white;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .intro-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .intro-section p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background-color: #4c6ef5;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            width: fit-content;
+        }
+
+        .visual-section {
+            width: 50%;
+        }
+
+        .visual-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: #2f2f3d;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><b>Welcome to CitizenAI</b></h1>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('services') }}">Services</a></li>
+                <li><a href="{{ url_for('chat') }}">Chat</a></li>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-section">
+        <!-- Left Panel: Intro Section -->
+        <section class="intro-section">
+            <h2>Empowering Citizens Through AI</h2>
+            <p>CitizenAI is your intelligent assistant for civic engagement. From accessing services to sharing feedback, our AI-powered platform helps citizens and governments communicate better—anytime, anywhere.</p>
+            <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+            <p style="margin-top: 15px;">Join us in building a smarter, more responsive civic environment.</p>
+        </section>
+
+        <!-- Right Panel: Visual Section -->
+        <section class="visual-section">
+            <img src="{{ url_for('static', filename='images/background.jpg') }}" alt="AI Background">
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 CitizenAI project. All rights reserved .</p>
+    </footer>
+</body>
+
+</html>

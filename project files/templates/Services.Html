@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CitizenAI - Services</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #999, #333);
+            color: white;
+        }
+
+        .services-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .service-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-section h2 {
+            font-size: 24px;
+            color: #4fd1c5;
+            margin-bottom: 10px;
+        }
+
+        .service-section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+            padding: 10px 20px;
+            background-color: #34d399;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #10b981;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="services-container">
+        <h1>Our Services</h1>
+
+        <!-- Service 1 -->
+        <section class="service-section">
+            <h2>🗣️ Citizen Chat Assistant</h2>
+            <p>Interact with our AI-powered assistant to ask questions about government services, policies, and more. Get real-time, accurate, and friendly responses.</p>
+        </section>
+
+        <!-- Service 2 -->
+        <section class="service-section">
+            <h2>🧠 Sentiment Analysis</h2>
+            <p>We analyze the sentiment of your feedback to help governments understand public emotions and improve their services accordingly.</p>
+        </section>
+
+        <!-- Service 3 -->
+        <section class="service-section">
+            <h2>📢 Concern Reporting</h2>
+            <p>Report your concerns directly through the chat. Negative feedback is automatically flagged for quick action, ensuring your voice is heard.</p>
+        </section>
+
+        <!-- Service 4 -->
+        <section class="service-section">
+            <h2>📊 Data Insights Dashboard</h2>
+            <p>Visualize weekly sentiment trends and view recently reported citizen concerns to help governments make data-driven decisions.</p>
+        </section>
+
+        <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+    </div>
+</body>
+
+</html>
